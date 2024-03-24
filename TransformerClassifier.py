@@ -13,7 +13,7 @@ from torch.nn.utils.rnn import pad_sequence
 from sklearn.model_selection import train_test_split
 import torch.optim as optim
 
-#nltk.download('punkt') #Run this if your first time using this script
+#nltk.download('punkt') 
 
 
 
