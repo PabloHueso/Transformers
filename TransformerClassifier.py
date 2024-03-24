@@ -265,7 +265,7 @@ if torch.cuda.is_available():
 else:
     device = torch.device("cpu")   # Use CPU
 
-device = torch.device("cpu") 
+#device = torch.device("cpu") Uncomment if there are CUDA errors 
 
 # Move the model to the device
 model.to(device)
@@ -482,6 +482,7 @@ with torch.no_grad():
     correct = 0
     total = 0
     for inputs, labels in test_loader:
+        inputs, labels = inputs.to(device), labels.to(device)
         outputs = model(inputs)
         _, predicted = torch.max(outputs, 1)
         total += labels.size(0)
@@ -503,6 +504,7 @@ for epoch in range(n_epochs):
         correct = 0
         total = 0
         for inputs, labels in test_loader:
+            inputs, labels = inputs.to(device), labels.to(device)
             outputs = model(inputs)
             _, predicted = torch.max(outputs, 1)
             total += labels.size(0)
@@ -513,6 +515,7 @@ for epoch in range(n_epochs):
         correct = 0
         total = 0
         for inputs, labels in train_loader:
+            inputs, labels = inputs.to(device), labels.to(device)
             outputs = model(inputs)
             _, predicted = torch.max(outputs, 1)
             total += labels.size(0)
@@ -556,6 +559,7 @@ with torch.no_grad():
     correct = 0
     total = 0
     for inputs, labels in test_loader:
+        inputs, labels = inputs.to(device), labels.to(device)
         outputs = model(inputs)
         _, predicted = torch.max(outputs, 1)
         total += labels.size(0)
@@ -566,6 +570,7 @@ with torch.no_grad():
     correct = 0
     total = 0
     for inputs, labels in train_loader:
+        inputs, labels = inputs.to(device), labels.to(device)
         outputs = model(inputs)
         _, predicted = torch.max(outputs, 1)
         total += labels.size(0)
