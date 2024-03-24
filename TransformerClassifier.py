@@ -276,7 +276,7 @@ model.eval()
 
 ####Dataset import and processing#####
 
-DataPath = 'C:\Master\S2\Projet DL\Sarcasm_Headlines_Dataset_v2.csv'
+DataPath = 'C:\Master\S2\Projet DL\Sarcasm_Headlines_Dataset_v2.csv' #Change path to your location of the dataset
 
 df = pd.read_csv(DataPath)
 print(df.head(), "\n")
